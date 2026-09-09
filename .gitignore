@@ -1,0 +1,209 @@
+# =============================================================================
+#  .gitignore — Cards_Classification_Problem
+#  Zasada: repozytorium przechowuje KOD, KONFIGURACJE i WYNIKI (metryki, wykresy).
+#  Nie przechowuje: danych binarnych, wag modeli, plikow tymczasowych.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Srodowiska wirtualne
+.venv/
+venv/
+env/
+ENV/
+.conda/
+.python-version
+
+# Zmienne srodowiskowe / sekrety
+.env
+.env.*
+!.env.example
+
+# -----------------------------------------------------------------------------
+# Testy, lintery, type checking
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.cover
+.hypothesis/
+
+# -----------------------------------------------------------------------------
+# Jupyter / notatniki eksploracyjne
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# -----------------------------------------------------------------------------
+# IDE / edytory
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# System operacyjny
+# -----------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# -----------------------------------------------------------------------------
+# MS Office — pliki blokad (praca inzynierska .docx)
+# Sam .docx w docs/ MA byc wersjonowany, pliki ~$ juz nie.
+# -----------------------------------------------------------------------------
+~$*
+*.tmp
+*.wbk
+*.asd
+
+# -----------------------------------------------------------------------------
+# Narzedzia lokalne (konfiguracja specyficzna dla maszyny)
+# -----------------------------------------------------------------------------
+.mcp.json
+.claude/settings.local.json
+
+# =============================================================================
+#  CZESC PROJEKTOWA — CV / AI
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Dataset — zdjecia, wideo i anotacje NIE trafiaja do gita (rozmiar).
+# Wyjatek: definicje podzialow train/val/test oraz opisy sesji zdjeciowych,
+#          bo bez nich eksperymenty nie sa reprodukowalne.
+# -----------------------------------------------------------------------------
+# UWAGA: wzorzec "data/**" (nie "data/") jest celowy - "data/" zablokowaloby
+# gitowi wejscie do katalogu i ponizsze wyjatki przestalyby dzialac.
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/**/README.md
+!data/splits/**
+!data/metadata/**
+
+# Formaty danych surowych (na wypadek plikow poza data/)
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# Wyjatek: grafiki uzywane w dokumentacji i wykresy do pracy inzynierskiej
+!docs/**/*.png
+!docs/**/*.jpg
+!docs/**/*.svg
+!results/**/*.png
+!results/**/*.svg
+!results/**/*.pdf
+
+# -----------------------------------------------------------------------------
+# Wagi modeli i artefakty treningu — za duze na repozytorium.
+# Wersjonujemy KONFIGURACJE treningu, nie same wagi.
+# -----------------------------------------------------------------------------
+models/**
+!models/**/
+!models/**/.gitkeep
+!models/**/*.yaml
+!models/**/*.json
+!models/**/README.md
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.trt
+*.tflite
+*.pb
+*.h5
+*.safetensors
+*.npz
+*.npy
+*.pkl
+*.joblib
+
+# -----------------------------------------------------------------------------
+# Ultralytics YOLO
+# -----------------------------------------------------------------------------
+runs/
+yolo*.pt
+yolo*.yaml.bak
+*.cache
+.ultralytics/
+settings.json.ultralytics
+
+# -----------------------------------------------------------------------------
+# Logi i trackery eksperymentow
+# -----------------------------------------------------------------------------
+logs/
+*.log
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
+events.out.tfevents.*
+
+# -----------------------------------------------------------------------------
+# Eksperymenty — struktura: experiments/<ID>/{config.yaml, metrics/, plots/, weights/}
+# Wersjonujemy config + metryki + wykresy (materialy do pracy inzynierskiej).
+# Ignorujemy checkpointy i surowe predykcje (duze pliki binarne).
+# -----------------------------------------------------------------------------
+experiments/**/weights/
+experiments/**/checkpoints/
+experiments/**/predictions/
+experiments/**/cache/
+
+# Wykresy z eksperymentow sa materialem do pracy inzynierskiej - wersjonujemy je
+# (globalna regula "*.png" powyzej domyslnie by je odrzucila).
+!experiments/**/plots/**
+!experiments/**/figures/**
+
+# -----------------------------------------------------------------------------
+# Pliki tymczasowe wlasne
+# -----------------------------------------------------------------------------
+tmp/
+scratch/
+sandbox/
