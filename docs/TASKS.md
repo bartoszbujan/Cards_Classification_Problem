@@ -1697,7 +1697,7 @@ przechodzą.
 - [ ] F15-T3 — Rysunek architektury systemu
 - [ ] F15-T4 — Uzupełnienie `README.md`
 - [ ] F15-T5 — Instalacja od zera według README
-- [ ] F15-T6 — `THESIS_OUTLINE.md`
+- [ ] F15-T6 — Aktualizacja `THESIS_OUTLINE.md`
 - [ ] F15-T7 — Uporządkowanie repozytorium
 - [ ] F15-T8 — Zestawienie ograniczeń systemu
 - [ ] F15-T9 — Kierunki rozwoju
@@ -1732,11 +1732,11 @@ przechodzą.
   krok po kroku; poprawienie każdej luki.
 - **Gotowe, gdy:** system działa po wykonaniu wyłącznie kroków z README.
 
-#### F15-T6 — `THESIS_OUTLINE.md` · 1,5 h
+#### F15-T6 — Aktualizacja `THESIS_OUTLINE.md` · 1,5 h
 - **Cel:** plan pisania pracy oparty na wynikach.
-- **Kroki:** struktura z sekcji 19.2; dla każdego rozdziału lista materiałów z repozytorium
-  (wykresy, tabele, dokumenty).
-- **Gotowe, gdy:** każdy rozdział ma przypisane źródła.
+- **Kroki:** aktualizacja wersji roboczej struktury (utworzonej przed implementacją) na
+  podstawie wyników; dla każdego rozdziału lista materiałów z repozytorium (wykresy,
+  tabele, dokumenty).
 
 #### F15-T7 — Uporządkowanie repozytorium · 1 h
 - **Cel:** czyste repozytorium do oddania.
